@@ -1,0 +1,60 @@
+.navsum .navBar {
+    position: relative;
+    z-index: 1;
+    height: 60px;
+    float: left;
+    width: 1140px
+}
+
+.navsum .navBar>ul>li {
+    position: relative;
+    float: left;
+    width: 9%;
+    display: inline;
+    text-align: center
+}
+
+.navsum .navBar>ul>li>h3 a {
+    zoom: 1;
+    height: 20px;
+    padding: 20px 0;
+    display: block;
+    color: #333333;
+    font-size: 18px;
+    transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s;
+    -webkit-transition: all 0.5s
+}
+
+.navsum .navBar>ul>li>h3 a:hover {
+    color: #ffffff;
+    font-weight: bold;
+    background: #871f27
+}
+
+.navsum .navBar>ul>li .sub {
+    display: none;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 60px;
+    background: url(../img/sub_bg.png) center center repeat;
+    float: left
+}
+
+.navsum .navBar>ul>li .sub a:hover {
+    color: #ee9123 !important;
+    transition: .5s
+}
+
+.navsum .navBar>ul>li .sub li {
+    text-align: center;
+    line-height: 24px
+}
+
+.navsum .navBar>ul>li .sub li a {
+    color: #ffffff;
+    display: block;
+    zoom: 1;
+    padding: 10px 0
+}

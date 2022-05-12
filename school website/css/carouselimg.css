@@ -1,0 +1,13 @@
+/* 淡入 */
+#ibanner .bd .on img {
+    animation:showDivAni 2s 1;
+}
+
+@keyframes showDivAni{
+    0%{opacity:0;}
+    100%{opacity: 1;}
+}
+
+.ibanner .hd ul li:hover {
+    
+}

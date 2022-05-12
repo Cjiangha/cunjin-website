@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <button>Change colors</button>
+    <span></span>
+    <div></div>
+    <div></div>
+
+    <div></div>
+    <div></div>
+    <div id="stop">Stop here</div>
+    <div></div>
+
+    <div></div>
+    <div></div>
+</body>
+<script src="../组件封装/导航栏/util/jquery.min.js"></script>
+<script>
+    $("button").click(function () {
+        $("div").each(function (index, domEle) {
+            // domEle == this
+            $(domEle).css("backgroundColor", "yellow");//所有的div节点 上黄色
+            if ($(this).is("#stop")) {
+                $("span").text("Stopped at div index #" + index);
+                return false;
+            }
+        });
+    });
+</script>
+
+</html>

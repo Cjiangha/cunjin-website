@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="./util/reset.css" />
+<link rel="stylesheet" href="./css/index.css" />
+
+<body>
+    <!-- 轮播图 -->
+    <div class="ibanner" id="ibanner">
+        <div class="hd">
+            <ul>
+                <!-- <li data-id="1"></li>
+                <li data-id="2"></li>
+                <li data-id="3"></li>
+                <li data-id="4"></li>
+                <li data-id="5"></li> -->
+            </ul>
+        </div>
+        <div class="bd">
+            <ul>
+                <li class="on">
+                    <img style="height: 363px" src="images/banner1.png" />
+                </li>
+                <!-- <li>
+                    <img src="images/banner2.png">
+                </li>
+                -->
+            </ul>
+        </div>
+        <div class="prev arrow"></div>
+        <div class="next arrow"></div>
+    </div>
+</body>
+<script src="./util/jquery.min.js"></script>
+<script src="./js/index.js"></script>
+<script>
+    /*
+    carouselImg
+        入参：
+   {
+        el: '#ibanner', //(必填参数)
+        imgdata:
+            ['images/banner1.png',
+                'images/banner2.png',
+                'images/banner3.png',
+                'images/banner4.png'],//(必填参数)
+        time: 3 //(可选参数)
+    }
+*/
+    carouselImg({
+        el: "#ibanner", //(必填参数)
+        imgdata: [
+            "images/banner1.png",
+            "images/banner2.png",
+            "images/banner3.png",
+            "images/banner4.png",
+        ], //(必填参数)
+        time: 3, //(可选参数)
+    });
+</script>
+
+</html>

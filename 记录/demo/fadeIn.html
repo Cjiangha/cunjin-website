@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      
+      p{
+      	width: 150px;
+      	height: 150px;
+      	animation:showDivAni 5s 1;
+      }
+
+      @keyframes showDivAni{
+      	0%{opacity:0;}
+      	100%{opacity: 1;}
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <!-- <p >我是段落！！！！</p> -->
+    <p class="tooltiptext">这是一个段落。</p>
+  </body>
+  <script src="../组件封装/导航栏/util/jquery.min.js"></script>
+  <script>
+    console.log($("p"));
+    //   $('p').fadeIn('slow')
+    // $("p").fadeIn("slow");
+
+    /*
+        不生效，因为他的大前提是把元素设置为隐藏，所以感觉功能比较鸡肋，后面使用了css的方法进行
+        @keyframes + ramsopacity + animate
+    */ 
+    $(document).ready(function () {
+      $("p").fadeIn("fast", function () {
+        // alert("Animation Done.");
+      });
+    });
+  </script>
+</html>

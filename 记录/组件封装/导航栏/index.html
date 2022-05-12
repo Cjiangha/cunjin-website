@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="./util/reset.css">
+<link rel="stylesheet" href="./css/index.css">
+
+<body>
+    <div class="navsum content clearfix">
+        <div class="navBar">
+            <ul>
+                <li id="m1">
+                    <h3><a href="./index.html">首页</a></h3>
+                </li>
+                <li id="m2">
+                    <h3><a href="javascript:void(0);">学校概况</a></h3>
+                    <ul class="sub">
+                        <li><a href="javascript:void(0);">学校简介</a></li>
+                        <li><a href="javascript:void(0);">学校领导</a></li>
+                        <li><a href="javascript:void(0);">学校标识</a></li>
+                        <li><a href="javascript:void(0);">校园风光</a></li>
+                        <li><a href="javascript:void(0);">校园视频</a></li>
+                    </ul>
+                </li>
+                <li id="m3">
+                    <h3><a href="javascript:void(0);">机构设置</a></h3>
+                </li>
+                <li id="m4">
+                    <h3><a href="javascript:void(0);">人才培养</a></h3>
+                </li>
+                <li id="m5">
+                    <h3><a href="javascript:void(0);">科学研究</a></h3>
+                </li>
+                <li id="m6">
+                    <h3><a href="javascript:void(0);">招生就业</a></h3>
+                    <ul class="sub">
+                        <li><a href="javascript:void(0);">招生网</a></li>
+                        <li><a href="javascript:void(0);">就业网</a></li>
+                    </ul>
+                </li>
+                <li id="m7">
+                    <h3><a href="javascript:void(0);">党建工作</a></h3>
+                </li>
+                <li id="m8">
+                    <h3><a href="javascript:void(0);">国际教育</a></h3>
+                    <ul class="sub">
+                        <li><a href="javascript:void(0);">国际交流处</a></li>
+                        <li><a href="javascript:void(0);">国际教育学院</a></li>
+                    </ul>
+                </li>
+                <li id="m9">
+                    <h3><a href="javascript:void(0);">学生生活</a></h3>
+                    <ul class="sub">
+                        <li><a href="javascript:void(0);">学生处</a></li>
+                        <li><a href="javascript:void(0);">校团委</a></li>
+                    </ul>
+                </li>
+                <li id="m10">
+                    <h3><a href="javascript:void(0);">创新创业</a></h3>
+                    <ul class="sub">
+                        <li><a href="javascript:void(0);">创新创业学院</a></li>
+                        <li><a href="javascript:void(0);">国际商学院</a></li>
+                    </ul>
+                </li>
+                <li id="m11">
+                    <h3><a href="javascript:void(0);">校友之家</a></h3>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+<script src="./util/jquery.min.js"></script>
+<script src="./js/index.js"></script>
+<script>
+/*
+    toggle
+        入参：
+    {
+        el:'#m6',
+        childerEl:'.sub',
+        time:500 //默认时间为300
+    }
+    time 可以修改
+
+*/ 
+
+function togglesum() {
+    var elarr = ['#m2', '#m6', '#m8', '#m9', '#m10']
+    elarr.forEach((item, index) => {
+        if (item == '#m2') { // 判断修改的 arrayitem
+            //第一个延迟1000ms
+            toggle2({
+                el: elarr[0],
+                childerEl: '.sub',
+                time: 1000 //默认时间为300
+            })
+        } else {
+            // 正常使用，不传值 默认300
+            toggle2({
+                el: item,
+                childerEl: '.sub',
+                // time: 400 //默认时间为300
+            })
+        }
+    });
+}
+// nav
+togglesum();
+
+
+// toggle({
+//     el:'#m2',
+//     childerEl:'.sub',
+//     time:1000 //默认时间为300
+// })
+
+// toggle({
+//     el:'#m6',
+//     childerEl:'.sub',
+//     time:500 //默认时间为300
+// })
+
+// toggle({
+//     el:'#m8',
+//     childerEl:'.sub',
+//     time:300 //默认时间为300
+// })
+
+// toggle({
+//     el:'#m9',
+//     childerEl:'.sub',
+//     time:300 //默认时间为300
+// })
+
+// toggle({
+//     el:'#m10',
+//     childerEl:'.sub',
+//     time:300 //默认时间为300
+// })
+
+</script>
+</html>

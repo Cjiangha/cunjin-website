@@ -27,9 +27,7 @@ function carouselImg(opt) {
 
     //替补方案
     Object.assign(defaultopt, opt);
-
     let srcArray = defaultopt.imgdata
-    // 获取节点的左边 怎么识别到对应的index？？ index
     let now = 0 //当前节点索引
     let domImage = $(defaultopt.el).find('.bd .on img') //图片节点
     let str = defaultopt.imgdata.map((item, index) => `<li data-id="${index + 1}"></li>`).join('')
@@ -48,7 +46,8 @@ function carouselImg(opt) {
         let domImage = $(this).parent().parent().next().children().find('li img')  //轮播图的img节点,已经找到了所有的img节点
         let id = $(this).data('id') - 1
         now = id
-        domImage.attr('src', srcArray[id - 1])
+        console.log(now)
+        domImage.attr('src', srcArray[id])
     });
 
     /*
@@ -81,10 +80,13 @@ function carouselImg(opt) {
          边界值   0和4 
     */
     $(defaultopt.el).find('div.next').click(function () {
-        console.log('点我右侧', $(this))
+        // console.log('点我右侧', $(this))
+        //  >=0 <= 3
         if (now >= 0 && now <= srcArray.length - 2) {
             now++
-        } else if (now === srcArray.length - 1) {
+            // now === 3
+        } else if (now === srcArray.length - 1 || now === srcArray.length ) {
+            // 如果同时存在 定时器 now 增加1 且 右键的时候，会出现同时加1的情况 
             now = 0
         }
         console.log(now)
@@ -99,6 +101,7 @@ function carouselImg(opt) {
 
     $(defaultopt.el).find('div.prev').click(function () {
         console.log('点我左侧')
+        // >=1 <= 3
         if (now >= 1 && now <= srcArray.length - 1) {
             now--
         } else if (now === 0) {

@@ -27,14 +27,12 @@ function carouselImg(opt) {
 
     //替补方案
     Object.assign(defaultopt, opt);
-
     let srcArray = defaultopt.imgdata
-    // 获取节点的左边 怎么识别到对应的index？？ index
     let now = 0 //当前节点索引
     let domImage = $(defaultopt.el).find('.bd .on img') //图片节点
-    let str = defaultopt.imgdata.map((item,index)=>`<li data-id="${index+1}"></li>`).join('')
-    console.log('str-----',str)
-    console.log('el',   $(defaultopt.el).find('hd ul'))
+    let str = defaultopt.imgdata.map((item, index) => `<li data-id="${index + 1}"></li>`).join('')
+    console.log('str-----', str)
+    console.log('el', $(defaultopt.el).find('hd ul'))
     $(defaultopt.el).find('.hd ul').html(str)
     $(defaultopt.el).find('.hd li').siblings('li').eq(now).addClass('on').siblings().removeClass('on')//高亮元素 / css也可以写
     // 鼠标移入
@@ -48,7 +46,8 @@ function carouselImg(opt) {
         let domImage = $(this).parent().parent().next().children().find('li img')  //轮播图的img节点,已经找到了所有的img节点
         let id = $(this).data('id') - 1
         now = id
-        domImage.attr('src', srcArray[id - 1])
+        console.log(now)
+        domImage.attr('src', srcArray[id])
     });
 
     /*
@@ -59,6 +58,7 @@ function carouselImg(opt) {
     let timer = null
     function zidong() {
         timer = setInterval(function () {
+            console.log(srcArray.length)
             if (now === srcArray.length - 1) {//在0和4之间
                 now = 0
             } else if (now >= 0 && now <= srcArray.length - 1) {//在
@@ -80,25 +80,34 @@ function carouselImg(opt) {
          边界值   0和4 
     */
     $(defaultopt.el).find('div.next').click(function () {
-        console.log('点我右侧', $(this))
+        // console.log('点我右侧', $(this))
+        //  >=0 <= 3
         if (now >= 0 && now <= srcArray.length - 2) {
             now++
-        } else if (now === srcArray.length - 1) {
+            // now === 3
+        } else if (now === srcArray.length - 1 || now === srcArray.length ) {
+            // 如果同时存在 定时器 now 增加1 且 右键的时候，会出现同时加1的情况 
             now = 0
         }
         console.log(now)
         domImage.attr('src', srcArray[now])
         gaoliang()
     })
-    // 左侧点击
-    //   边界值 0 和 4
+
+    /*
+      左侧点击
+      边界值 0 和 4
+    */
+
     $(defaultopt.el).find('div.prev').click(function () {
         console.log('点我左侧')
+        // >=1 <= 3
         if (now >= 1 && now <= srcArray.length - 1) {
             now--
         } else if (now === 0) {
             now = srcArray.length - 1
         }
+        console.log(now)
         domImage.attr('src', srcArray[now])
         gaoliang()
     })
@@ -108,10 +117,7 @@ function carouselImg(opt) {
         console.log('鼠标移入')
         clearInterval(timer);
     }).mouseleave(function () {
+        //鼠标移出
         zidong()
     })
-
-    setInterval(()=>{
-        console.log(now)
-    },3000)
 }

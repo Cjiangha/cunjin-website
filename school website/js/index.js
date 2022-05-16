@@ -35,8 +35,18 @@
     })
 
 
-
-
+    // swiper
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        // slidesPerView 对应的格子数量
+        slidesPerView: 4,
+        paginationClickable: true,
+        spaceBetween: 30,
+        // 如果需要前进后退按钮
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        loop: true
+    });
 
 
 }())

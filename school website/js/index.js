@@ -34,9 +34,19 @@
         time: 3 //(可选参数)
     })
 
+    //校园快讯
+    let hdul = $('.part3 .hasMoreTab .hd').find('ul li')
+    hdul.on('click',function(){
+       $(this).addClass('on').siblings().removeClass('on')
+    })
+    let tzgg = $('.part3 .tzgg .hd').find('ul li')
+    tzgg.on('click',function(){
+       $(this).addClass('on').siblings().removeClass('on')
+    })
+ 
 
     // swiper
-    var swiper = new Swiper('.swiper-container', {
+     new Swiper('.swiper-container', {
         pagination: '.swiper-pagination',
         // slidesPerView 对应的格子数量
         slidesPerView: 4,

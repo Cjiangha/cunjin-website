@@ -23,6 +23,32 @@
     // nav
     togglesum();
 
+    // search
+    var scheduleBox = document.querySelector('#search-form')
+    var toggleSearch = document.querySelector('#toggle-search')
+    var toggleSearchSearch = document.querySelector("#inputSearch")
+    var toggleSearchImg = document.querySelector('#inputImage')
+    console.log(toggleSearchSearch)
+    console.log(toggleSearchImg)
+    // 使用事件委托，对全局的事件进行判断
+    document.addEventListener("click", function (e) {
+        // 判断被点击的元素是不是scheduleInput元素，不是的话，就隐藏之
+        var e = e || window.event;
+        var target = e.target || e.srcElement;
+        console.log(target)
+        console.log(scheduleBox)
+        if( target == toggleSearch || target == toggleSearch|| target ==toggleSearchSearch|| target == toggleSearchImg){
+            console.log('toggleSearch')
+            $('#search-form').addClass('open') 
+        }
+        else if (e.target !== scheduleBox || e.target!== toggleSearch ) { 
+            // 目标元素不是搜索input div  或者 不是搜索按钮
+            scheduleBox.setAttribute("class",""); 
+        }
+    });
+
+
+
     // banner
     carouselImg({
         el: '#ibanner', //(必填参数)
@@ -39,42 +65,42 @@
     let hasMoreconlast = $('.part3 .hasMoreTab .bd>.con .xyxx_list:last-child')
     //校园快讯
     let hdul = $('.part3 .hasMoreTab .hd').find('ul li')
-    hdul.on('click',function(){
-       $(this).addClass('on').siblings().removeClass('on')
-       let id =    $(this).data('id')
-       if($(this).attr('class') === 'on'){
-           console.log(id)
-            if(id === 1){
-                hasMoreconfirst.css({'display':'block'})
-                hasMoreconlast.css({'display':'none'})
-            }else if(id ===2){
-                hasMoreconfirst.css({'display':'none'})
-                hasMoreconlast.css({'display':'block'})
+    hdul.on('click', function () {
+        $(this).addClass('on').siblings().removeClass('on')
+        let id = $(this).data('id')
+        if ($(this).attr('class') === 'on') {
+            console.log(id)
+            if (id === 1) {
+                hasMoreconfirst.css({ 'display': 'block' })
+                hasMoreconlast.css({ 'display': 'none' })
+            } else if (id === 2) {
+                hasMoreconfirst.css({ 'display': 'none' })
+                hasMoreconlast.css({ 'display': 'block' })
             }
-       }
+        }
     })
-    
+
     let hastzggconfirst = $('.part3 .tzgg .bd>.con .xyxx_list:first-child')
     let hastzggconlast = $('.part3 .tzgg .bd>.con .xyxx_list:last-child')
     let tzgg = $('.part3 .tzgg .hd').find('ul li')
-    tzgg.on('click',function(){
-       $(this).addClass('on').siblings().removeClass('on')
-       let id =  $(this).data('id')
-       if($(this).attr('class') === 'on'){
-           console.log(id)
-            if(id === 1){
-                hastzggconfirst.css({'display':'block'})
-                hastzggconlast.css({'display':'none'})
-            }else if(id ===2){
-                hastzggconfirst.css({'display':'none'})
-                hastzggconlast.css({'display':'block'})
+    tzgg.on('click', function () {
+        $(this).addClass('on').siblings().removeClass('on')
+        let id = $(this).data('id')
+        if ($(this).attr('class') === 'on') {
+            console.log(id)
+            if (id === 1) {
+                hastzggconfirst.css({ 'display': 'block' })
+                hastzggconlast.css({ 'display': 'none' })
+            } else if (id === 2) {
+                hastzggconfirst.css({ 'display': 'none' })
+                hastzggconlast.css({ 'display': 'block' })
             }
-       }
+        }
     })
-    
+
 
     // swiper
-     new Swiper('.swiper-container', {
+    new Swiper('.swiper-container', {
         pagination: '.swiper-pagination',
         // slidesPerView 对应的格子数量
         slidesPerView: 4,

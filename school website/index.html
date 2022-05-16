@@ -25,7 +25,7 @@
         </div>
     </div>
     <!-- 导航 -->
-    <div class="navsum content clearfix">
+    <div class="navsum content clearfix jsdh">
         <div class="navBar">
             <ul>
                 <li id="m1">
@@ -87,10 +87,12 @@
             </ul>
         </div>
         <div class="search">
-            <form action="">
-                <input type="image" src="img/search.png" style="cursor:pointer">
-              
-            </form>
+                <input type="image" id="toggle-search" src="img/search.png" style="cursor:pointer">
+                <div id="search-form" action="" >
+                        <input id="inputSearch" size="30" type="search" placeholder="请输入关键字搜索!" 
+                            >
+                            <input id="inputImage" type="image" src="img/search1.png"  style="cursor:pointer">
+                </div> 
         </div>
     </div>
     <!-- 轮播图 -->

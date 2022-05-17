@@ -1,4 +1,15 @@
 (function () {
+    if (
+        navigator.userAgent.match(/Mobi/i) ||
+        navigator.userAgent.match(/Android/i) ||
+        navigator.userAgent.match(/iPhone/i)
+    ) {
+        // 当前设备是移动设备
+        console.log('我是移动设备呀！！！！')
+        window.location.href = './mobile.html'
+    }
+
+
     // 导航toggle
     function togglesum() {
         var elarr = ['#m2', '#m6', '#m8', '#m9', '#m10']
@@ -37,13 +48,13 @@
         var target = e.target || e.srcElement;
         console.log(target)
         console.log(scheduleBox)
-        if( target == toggleSearch || target == toggleSearch|| target ==toggleSearchSearch|| target == toggleSearchImg){
+        if (target == toggleSearch || target == toggleSearch || target == toggleSearchSearch || target == toggleSearchImg) {
             console.log('toggleSearch')
-            $('#search-form').addClass('open') 
+            $('#search-form').addClass('open')
         }
-        else if (e.target !== scheduleBox || e.target!== toggleSearch ) { 
+        else if (e.target !== scheduleBox || e.target !== toggleSearch) {
             // 目标元素不是搜索input div  或者 不是搜索按钮
-            scheduleBox.setAttribute("class",""); 
+            scheduleBox.setAttribute("class", "");
         }
     });
 

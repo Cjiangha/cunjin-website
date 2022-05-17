@@ -2,7 +2,8 @@
     if (
         navigator.userAgent.match(/Mobi/i) ||
         navigator.userAgent.match(/Android/i) ||
-        navigator.userAgent.match(/iPhone/i)
+        navigator.userAgent.match(/iPhone/i) ||
+        navigator.userAgent.match(/IPad/i)
     ) {
         // 当前设备是移动设备
         console.log('我是移动设备呀！！！！')

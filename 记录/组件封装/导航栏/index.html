@@ -93,14 +93,14 @@ function togglesum() {
     elarr.forEach((item, index) => {
         if (item == '#m2') { // 判断修改的 arrayitem
             //第一个延迟1000ms
-            toggle2({
-                el: elarr[0],
-                childerEl: '.sub',
+            toggle({
+                el: elarr[0], //必填
+                childerEl: '.sub',//必填
                 time: 1000 //默认时间为300
             })
         } else {
             // 正常使用，不传值 默认300
-            toggle2({
+            toggle({
                 el: item,
                 childerEl: '.sub',
                 // time: 400 //默认时间为300
